@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: "Checking out git repository"
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set executable permissions
         run: |
