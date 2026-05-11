@@ -12,6 +12,8 @@ jobs:
   build-release:
     name: "Build and Release"
     runs-on: "ubuntu-22.04"
+    env:
+     FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: "Checking out git repository"
@@ -44,7 +46,7 @@ jobs:
           ./custom.sh "$download_url"
 
       - name: "Publish"
-        uses: softprops/action-gh-release@v2.2.1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: "Custom-Installer-x86_64-ISO"
           body_path: "${{ github.workspace }}/supportFiles/custom/info.md"
